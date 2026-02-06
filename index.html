@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Rose Day Anjum 🌹</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#ff4d6d,#ffc1cc,#ffffff);
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    /* Tap Overlay */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:linear-gradient(135deg,#be123c,#ff4d6d);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:10;
+    }
+    .tap{
+      color:white;
+      text-align:center;
+      font-size:22px;
+      animation:pulse 1.5s infinite;
+    }
+    .tap span{
+      display:block;
+      font-size:42px;
+      margin-bottom:10px;
+    }
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.1)}
+      100%{transform:scale(1)}
+    }
+
+    /* Card */
+    .card{
+      background:white;
+      border-radius:22px;
+      padding:26px;
+      width:90%;
+      max-width:360px;
+      text-align:center;
+      box-shadow:0 20px 45px rgba(190,18,60,.35);
+      display:none;
+      animation:pop 1s ease;
+    }
+    @keyframes pop{
+      from{transform:scale(.8);opacity:0}
+      to{transform:scale(1);opacity:1}
+    }
+
+    h1{color:#be123c}
+    p{color:#444;font-size:16px;line-height:1.7}
+
+    .rose{
+      font-size:44px;
+      animation:float 2s infinite ease-in-out;
+    }
+    @keyframes float{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+      100%{transform:translateY(0)}
+    }
+
+    .from{
+      margin-top:15px;
+      font-weight:bold;
+      color:#e11d48;
+    }
+
+    /* I Love You Reveal */
+    .reveal{
+      margin-top:18px;
+      font-size:0;
+      color:#be123c;
+      font-weight:bold;
+      animation:reveal 2.5s forwards;
+      animation-delay:2s;
+    }
+    @keyframes reveal{
+      from{font-size:0;opacity:0}
+      to{font-size:28px;opacity:1}
+    }
+
+    /* Floating Hearts */
+    .hearts span{
+      position:absolute;
+      bottom:-20px;
+      color:rgba(225,29,72,.6);
+      font-size:20px;
+      animation:rise 6s linear infinite;
+    }
+    @keyframes rise{
+      from{opacity:0}
+      10%{opacity:1}
+      to{bottom:110%;opacity:0}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Tap to Open -->
+  <div class="overlay" id="overlay" onclick="openCard()">
+    <div class="tap">
+      <span>💗</span>
+      Anjum Is Par Tap Kro<br/>Tumhre Liye Kux Surprise hai
+    </div>
+  </div>
+
+  <!-- Main Card -->
+  <div class="card" id="card">
+    <div class="rose">🌹</div>
+    <h1>Happy Rose Day Anjum</h1>
+     <p><strong>Mujhe Sayri To Aati Nahi Fir Bhi Tumhare Liye</strong></p>
+    <p>
+      Taras gye tere Didar ko... 
+      Ki Taras gye tere Didar ko
+      💫<br>
+      Fir Bhi Dil Tujhko Yad krta hai ❤️<br>
+      Or Hmse khush Nasib To tumhare Ghar ka aaina hai  🌸<br>
+      Jo har din Tumhara Didar krta hai 💕
+     <br> Maine Reel me dekhi thi ye sayri 😁 Vahi se Dekh kr Likha
+    </p>
+
+    <div class="reveal">I Love You Anjum ❤️</div>
+    
+    <div class="from"> Tumhara Snap Vala</div> 
+    <p><strong>...❤️...
+  </div>
+
+  <!-- Hearts -->
+  <div class="hearts">
+    <span style="left:10%">❤️</span>
+    <span style="left:30%;animation-delay:2s">💗</span>
+    <span style="left:50%;animation-delay:4s">💖</span>
+    <span style="left:70%;animation-delay:1s">💞</span>
+    <span style="left:90%;animation-delay:3s">❤️</span>
+  </div>
+
+  <!-- Music (optional) -->
+  <audio id="music" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openCard(){
+      document.getElementById('overlay').style.display='none';
+      document.getElementById('card').style.display='block';
+      document.getElementById('bgm').play().catch(()=>{});
+    }
+  </script>
+
+</body>
+</html>
